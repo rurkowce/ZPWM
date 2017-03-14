@@ -1,15 +1,30 @@
 #include <Windows.h>
+#include <stdio.h>
 
 int WINAPI WinMain(HINSTANCE hinstance, HINSTANCE hPrevinstance, PSTR szCmdLine, int iCmdShow)
 {
-  int iRetKey = MessageBox(0, "Podoba ci sie moja pierwsza aplikacja", "Aplikacja", MB_YESNO);
-  if (iRetKey == IDYES)
-  {
-    MessageBox(0, "To wspaniale", "Aplikacja", MB_OK);
+ MessageBox(0, "Wybierz liczbe z zakresu 0-40", "Aplikacja", MB_OK);
+
+  int pierwsza = 0;
+  int ostatnia = 40;
+  int srodek = (pierwsza + ostatnia) / 2;
+  char text[100];
+
+  while (pierwsza <= ostatnia) {
+
+    sprintf_s(text, "Czy twoja liczba jest mniejsza od %d?", srodek);
+    int iRetKey = MessageBox(0, text, "Aplikacja", MB_YESNO);
+      if (iRetKey == IDYES) {
+        ostatnia = srodek - 1;
+        srodek = (pierwsza + ostatnia) / 2;
+    }
+      else {
+        pierwsza = srodek + 1;
+        srodek = (pierwsza + ostatnia) / 2;
+      }
   }
-  else
-  {
-    MessageBox(0, "A co ci siê nie podoba?", "Aplikacja", MB_OK | MB_ICONQUESTION);
-  }
+  sprintf_s(text, "Twoja liczba to: %d", srodek);
+  MessageBox(0, text, "Aplikacja", MB_OK);
+
   return 0;
 }
