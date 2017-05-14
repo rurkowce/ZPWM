@@ -86,7 +86,7 @@ int WINAPI WinMain(HINSTANCE hinstance, HINSTANCE hPrevinstance, PSTR szCmdLine,
   pcmWaveFormat.nBlockAlign = 1;
   pcmWaveFormat.cbSize = 0;
 
-  MMRESULT mmResult = 0;
+  MMRESULT mmResult;
   HWAVEOUT hwo = 0;
   UINT devId;
 
@@ -104,7 +104,7 @@ int WINAPI WinMain(HINSTANCE hinstance, HINSTANCE hPrevinstance, PSTR szCmdLine,
   BYTE* pBufferForAudio = new BYTE[65 * pcmWaveFormat.nAvgBytesPerSec];   //4 - ile sekund
 
 
-  int i = 0;
+  //int i = 0;
 
   /*
 
@@ -214,15 +214,12 @@ int WINAPI WinMain(HINSTANCE hinstance, HINSTANCE hPrevinstance, PSTR szCmdLine,
   */
 
   whdr.dwBufferLength = 65 * pcmWaveFormat.nAvgBytesPerSec;
-  {
     //Song(note_imperialny, time_imperialny, pBufferForAudio, size_imperialny);
     Song(note_barka, time_barka, pBufferForAudio, size_barka);
     mmResult = waveOutPrepareHeader(hwo, &whdr, sizeof(WAVEHDR));
     mmResult = waveOutWrite(hwo, &whdr, sizeof(WAVEHDR));
     while ((whdr.dwFlags & WHDR_DONE) != WHDR_DONE)Sleep(100);
     mmResult = waveOutUnprepareHeader(hwo, &whdr, sizeof(WAVEHDR));
-  }
-
   mmResult = waveOutClose(hwo);
   delete[] pBufferForAudio;
   return 0;
