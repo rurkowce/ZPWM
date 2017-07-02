@@ -15,47 +15,47 @@ char tab[3][3] = { { '0', '1', '2' },
 
 void DrawX(HDC hdc, int x, int y)
 {
-	HPEN hMyPen = CreatePen(PS_SOLID, 2, RGB(255, 125, 0));
-	SelectObject(hdc, hMyPen);
-	MoveToEx(hdc, x - 10, y - 10, NULL);
-	LineTo(hdc, x + 10, y + 10);
-	MoveToEx(hdc, x - 10, y + 10, NULL);
-	LineTo(hdc, x + 10, y - 10);
-	DeleteObject(hMyPen);
+  HPEN hMyPen = CreatePen(PS_SOLID, 2, RGB(255, 125, 0));
+  SelectObject(hdc, hMyPen);
+  MoveToEx(hdc, x - 10, y - 10, NULL);
+  LineTo(hdc, x + 10, y + 10);
+  MoveToEx(hdc, x - 10, y + 10, NULL);
+  LineTo(hdc, x + 10, y - 10);
+  DeleteObject(hMyPen);
 }
 
 void DrawY(HDC hdc, int x, int y)
 {
-	HPEN hMyPen = CreatePen(PS_SOLID, 2, RGB(255, 125, 0));
+  HPEN hMyPen = CreatePen(PS_SOLID, 2, RGB(255, 125, 0));
   SelectObject(hdc, hMyPen);
-	MoveToEx(hdc, x - 10, y - 10, NULL);
-	LineTo(hdc, x - 10, y + 10);
-	LineTo(hdc, x - 10, y - 10);
-	LineTo(hdc, x + 10, y - 10);
-	LineTo(hdc, x + 10, y + 10);
-	LineTo(hdc, x - 10, y + 10);
-	DeleteObject(hMyPen);
+  MoveToEx(hdc, x - 10, y - 10, NULL);
+  LineTo(hdc, x - 10, y + 10);
+  LineTo(hdc, x - 10, y - 10);
+  LineTo(hdc, x + 10, y - 10);
+  LineTo(hdc, x + 10, y + 10);
+  LineTo(hdc, x - 10, y + 10);
+  DeleteObject(hMyPen);
 }
 
 void DrawBoard(HDC hdc)
 {
-	HPEN hMyPen = CreatePen(PS_SOLID, 2, RGB(255, 125, 0));
-	SelectObject(hdc, hMyPen);
-	MoveToEx(hdc, 60, 30, NULL);
-	LineTo(hdc, 60, 180);
-	MoveToEx(hdc, 110, 30, NULL);
-	LineTo(hdc, 110, 180);
-	MoveToEx(hdc, 10, 80, NULL);
-	LineTo(hdc, 160, 80);
-	MoveToEx(hdc, 10, 130, NULL);
-	LineTo(hdc, 160, 130);
-	DeleteObject(hMyPen);
+  HPEN hMyPen = CreatePen(PS_SOLID, 2, RGB(255, 125, 0));
+  SelectObject(hdc, hMyPen);
+  MoveToEx(hdc, 60, 30, NULL);
+  LineTo(hdc, 60, 180);
+  MoveToEx(hdc, 110, 30, NULL);
+  LineTo(hdc, 110, 180);
+  MoveToEx(hdc, 10, 80, NULL);
+  LineTo(hdc, 160, 80);
+  MoveToEx(hdc, 10, 130, NULL);
+  LineTo(hdc, 160, 130);
+  DeleteObject(hMyPen);
 }
 
 bool isResult(HWND hwndDlg, HDC xx)
 {
   HPEN hMyPen = CreatePen(PS_SOLID, 2, RGB(255, 125, 0));
-SelectObject(xx, hMyPen);
+  SelectObject(xx, hMyPen);
   if (tab[0][0] == tab[0][1] && tab[0][0] == tab[0][2] ||
     tab[1][0] == tab[1][1] && tab[1][0] == tab[1][2] ||
     tab[2][0] == tab[2][1] && tab[2][0] == tab[2][2] ||
@@ -127,12 +127,12 @@ INT_PTR CALLBACK DialogProc(HWND hwndDig, UINT uMsg, WPARAM wParam, LPARAM lPara
               isFieldOccupiedByFirstPlayer[i][j] = false;
               isFieldOccupiedBySecondPlayer[i][j] = false;
             }
-          wsprintf(szText, "Stop");
-          SetWindowText(hwndButton1, szText); //Przypisanie go do przycisku
-          isGameOn = true;
-          //CreateBrush
-          TextOut(hdc, 0, 0, szText, strlen(szText));
-        }
+            wsprintf(szText, "Stop");
+            SetWindowText(hwndButton1, szText); //Przypisanie go do przycisku
+            isGameOn = true;
+            //CreateBrush
+            TextOut(hdc, 0, 0, szText, strlen(szText));
+          }
         }
         else
         {
@@ -171,7 +171,7 @@ INT_PTR CALLBACK DialogProc(HWND hwndDig, UINT uMsg, WPARAM wParam, LPARAM lPara
             tab[filedX][filedY] = 'X';
             CheckRadioButton(hwndDig, IDC_RADIO1, IDC_RADIO2, IDC_RADIO2);
 
-            if (isResult(hwndDig,hdc))
+            if (isResult(hwndDig, hdc))
             {
               HPEN hMyPen = CreatePen(PS_SOLID, 2, RGB(255, 125, 0));
               SelectObject(hdc, hMyPen);
@@ -180,7 +180,7 @@ INT_PTR CALLBACK DialogProc(HWND hwndDig, UINT uMsg, WPARAM wParam, LPARAM lPara
               TextOut(hdc, 250, 10, szText, strlen(szText));
               return TRUE;
             }
-            if(remis)
+            if (remis)
             {
               HPEN hMyPen = CreatePen(PS_SOLID, 2, RGB(255, 125, 0));
               SelectObject(hdc, hMyPen);
@@ -244,7 +244,7 @@ INT_PTR CALLBACK DialogProc(HWND hwndDig, UINT uMsg, WPARAM wParam, LPARAM lPara
     return TRUE;
   }
   return FALSE;
-  }
+}
 
 
 
