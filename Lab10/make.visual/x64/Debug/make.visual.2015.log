@@ -1,0 +1,9 @@
+﻿C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(368,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.CppBuild.targets(392,5): warning MSB8028: The intermediate directory (x64\Debug\) contains files shared from another project (App.vcxproj, Lab01.vcxproj, make.visual.2015.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+  main.cpp
+f:\studia\semestr 6\zpwm\github\zpwm\lab10\source\main.cpp(13): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+f:\studia\semestr 6\zpwm\github\zpwm\lab10\source\main.cpp(73): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+f:\studia\semestr 6\zpwm\github\zpwm\lab10\source\main.cpp(74): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+f:\studia\semestr 6\zpwm\github\zpwm\lab10\source\main.cpp(75): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+  make.visual.2015.vcxproj -> F:\Studia\Semestr 6\ZPWM\GitHub\ZPWM\Lab10\make.visual\\..\bin\Lab10.exe
+  make.visual.2015.vcxproj -> F:\Studia\Semestr 6\ZPWM\GitHub\ZPWM\Lab10\make.visual\\..\bin\Lab10.pdb (Partial PDB)
