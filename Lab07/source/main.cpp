@@ -28,7 +28,8 @@ void Song(char *tabNote, double *tabTime, BYTE* pBufferForAudio, int size);
 char note_imperialny[size_imperialny] = { 'E','E','E','C','G','E','C','G','E','B','B','B','C','G','E','C','G','E' };
 double time_imperialny[size_imperialny] = { 8,8,8,4,2,8,4,2,8,8,8,8,4,2,8,4,2,8, };
 
-char note_barka[size_barka] = { 'Z', 'E', 'Z', 'G', 'Z', 'E', 'D', 'D', 'E', 'Z', 'G', 'G', 'G', 'G', 'G', 'Z', 'E', 'E', 'P', 'D', 'E', 'Z', 'Z','Z', 'G', 'E', 'D', 'D',
+char note_barka[size_barka] = { 'Z', 'E', 'Z', 'G', 'Z', 'E', 'D', 'D', 'E', 'Z', 'G', 'G', 'G', 'G', 'G', 'Z', 'E', 'E', 'P',
+                                'D', 'E', 'Z', 'Z','Z', 'G', 'E', 'D', 'D',
                                 'D','H','H','H','Y','R','Y','H','A','A','G','Z','G','G','G','A','H','A','G',
                                 'Z','Z','D','D','H','H','H','Y','R','Y','H','A','A','G','Z','G','G','E','Z','G','Z','E','D'};
 double time_barka[size_barka] = { 42,6,6,6,6,6,18,36,12,6,18,30,6,6,6,6,18,30,6,12,6,18,30,6,12,6,18,36,
